@@ -55,29 +55,58 @@ class _MyAppState extends State<MyApp> {
               ElevatedButton(
                 onPressed: _answerQuestion,
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.blue),
+                  backgroundColor: MaterialStateProperty.all(
+                    Colors.blue,
+                  ),
+                  minimumSize: MaterialStateProperty.all(
+                    const Size.fromHeight(50),
+                  ),
                 ),
                 child: const Text('Answer 1'),
               ),
-              ElevatedButton(
-                onPressed: _answerQuestion,
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.blue),
-                ),
-                child: const Text('Answer 2'),
+              const SizedBox(
+                height: 10,
               ),
               ElevatedButton(
                 onPressed: _answerQuestion,
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.blue),
+                  backgroundColor: MaterialStateProperty.all(
+                    Colors.blue,
+                  ),
+                  minimumSize: MaterialStateProperty.all(
+                    const Size.fromHeight(50),
+                  ),
+                ),
+                child: const Text('Answer 2'),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              ElevatedButton(
+                onPressed: _answerQuestion,
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(
+                    Colors.blue,
+                  ),
+                  minimumSize: MaterialStateProperty.all(
+                    const Size.fromHeight(50),
+                  ),
                 ),
                 child: const Text('Answer 3'),
+              ),
+              const SizedBox(
+                height: 10,
               ),
               const Spacer(),
               ElevatedButton(
                 onPressed: _resetQuestions,
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.red),
+                  backgroundColor: MaterialStateProperty.all(
+                    Colors.red,
+                  ),
+                  minimumSize: MaterialStateProperty.all(
+                    const Size.fromHeight(50),
+                  ),
                 ),
                 child: const Text('Reset'),
               ),
