@@ -76,6 +76,7 @@ class _MyAppState extends State<MyApp> {
                 ),
                 child: const Text('Answer 3'),
               ),
+              const Spacer(),
               ElevatedButton(
                 onPressed: _resetQuestions,
                 style: ElevatedButton.styleFrom(
