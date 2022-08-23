@@ -54,34 +54,30 @@ class _MyAppState extends State<MyApp> {
               ),
               ElevatedButton(
                 onPressed: _answerQuestion,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
-                  minimumSize: const Size.fromHeight(40),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.blue),
                 ),
                 child: const Text('Answer 1'),
               ),
               ElevatedButton(
                 onPressed: _answerQuestion,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
-                  minimumSize: const Size.fromHeight(40),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.blue),
                 ),
                 child: const Text('Answer 2'),
               ),
               ElevatedButton(
                 onPressed: _answerQuestion,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.green,
-                  minimumSize: const Size.fromHeight(40),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.blue),
                 ),
                 child: const Text('Answer 3'),
               ),
               const Spacer(),
               ElevatedButton(
                 onPressed: _resetQuestions,
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.red,
-                  minimumSize: const Size.fromHeight(40),
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all(Colors.red),
                 ),
                 child: const Text('Reset'),
               ),
