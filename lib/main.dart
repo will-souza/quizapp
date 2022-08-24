@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './question.dart';
+import './answer.dart';
 
 void main() => runApp(const MyApp());
 
@@ -24,7 +25,7 @@ class _MyAppState extends State<MyApp> {
     'What\'s your favorite song',
   ];
 
-  void _answerQuestion() {
+  _answerQuestion() {
     setState(() {
       if (_questionIndex + 1 < _questions.length) {
         _questionIndex = _questionIndex + 1;
@@ -32,7 +33,7 @@ class _MyAppState extends State<MyApp> {
     });
   }
 
-  void _resetQuestions() {
+  _resetQuestions() {
     setState(() {
       _questionIndex = 0;
     });
@@ -52,49 +53,25 @@ class _MyAppState extends State<MyApp> {
               Question(
                 questionText: _questions[_questionIndex],
               ),
-              ElevatedButton(
+              Answer(
+                buttonColor: Colors.blue,
                 onPressed: _answerQuestion,
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.blue),
-                  minimumSize: MaterialStateProperty.all(
-                    const Size.fromHeight(50),
-                  ),
-                ),
-                child: const Text('Answer 1'),
               ),
               const SizedBox(height: 10),
-              ElevatedButton(
+              Answer(
+                buttonColor: Colors.blue,
                 onPressed: _answerQuestion,
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.blue),
-                  minimumSize: MaterialStateProperty.all(
-                    const Size.fromHeight(50),
-                  ),
-                ),
-                child: const Text('Answer 2'),
               ),
               const SizedBox(height: 10),
-              ElevatedButton(
+              Answer(
+                buttonColor: Colors.blue,
                 onPressed: _answerQuestion,
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.blue),
-                  minimumSize: MaterialStateProperty.all(
-                    const Size.fromHeight(50),
-                  ),
-                ),
-                child: const Text('Answer 3'),
               ),
               const SizedBox(height: 10),
               const Spacer(),
-              ElevatedButton(
+              Answer(
+                buttonColor: Colors.red,
                 onPressed: _resetQuestions,
-                style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.red),
-                  minimumSize: MaterialStateProperty.all(
-                    const Size.fromHeight(50),
-                  ),
-                ),
-                child: const Text('Reset'),
               ),
             ],
           ),
