@@ -17,17 +17,32 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   var _questionIndex = 0;
 
-  final _questions = <String>[
-    'What\'s your favorite color?',
-    'What\'s your favorite animal',
-    'What\'s your favorite movie',
-    'What\'s your favorite food',
-    'What\'s your favorite song',
+  final questions = <Map>[
+    {
+      'questionText': 'What\'s your favorite color?',
+      'answers': <String>['Blue', 'Red', 'Green', 'Other']
+    },
+    {
+      'questionText': 'What\'s your favorite animal',
+      'answers': <String>['Dog', 'Cat', 'Mouse', 'Other']
+    },
+    {
+      'questionText': 'What\'s your favorite movie?',
+      'answers': <String>['Stolen', 'Con Air', 'The Rock', 'Other']
+    },
+    {
+      'questionText': 'What\'s your favorite food?',
+      'answers': <String>['Pasta', 'Rice and Beans', 'Meat', 'Other']
+    },
+    {
+      'questionText': 'What\'s your favorite subject?',
+      'answers': <String>['Math', 'English', 'Science', 'Other']
+    },
   ];
 
   _answerQuestion() {
     setState(() {
-      if (_questionIndex + 1 < _questions.length) {
+      if (_questionIndex + 1 < questions.length) {
         _questionIndex = _questionIndex + 1;
       }
     });
@@ -51,27 +66,21 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             children: [
               Question(
-                questionText: _questions[_questionIndex],
+                questionText: questions[_questionIndex]['questionText'],
               ),
-              Answer(
-                buttonColor: Colors.blue,
-                onPressed: _answerQuestion,
-              ),
-              const SizedBox(height: 10),
-              Answer(
-                buttonColor: Colors.blue,
-                onPressed: _answerQuestion,
-              ),
-              const SizedBox(height: 10),
-              Answer(
-                buttonColor: Colors.blue,
-                onPressed: _answerQuestion,
-              ),
-              const SizedBox(height: 10),
+              ...questions[_questionIndex]['answers'].map((answer) {
+                return Answer(
+                  buttonColor: Colors.blue,
+                  onPressed: _answerQuestion,
+                  answerText: answer,
+                );
+              }).toList(),
               const Spacer(),
               Answer(
                 buttonColor: Colors.red,
                 onPressed: _resetQuestions,
+                answerText: 'Reset Quiz',
+                marginBottom: 0,
               ),
             ],
           ),
