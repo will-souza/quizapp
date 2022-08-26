@@ -80,7 +80,6 @@ class _MyAppState extends State<MyApp> {
                 buttonColor: Colors.red,
                 onPressed: _resetQuestions,
                 answerText: 'Reset Quiz',
-                marginBottom: 0,
               ),
             ],
           ),
