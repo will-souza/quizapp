@@ -15,34 +15,34 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  var _questionIndex = 0;
-
   final questions = <Map>[
     {
       'questionText': 'What\'s your favorite color?',
-      'answers': <String>['Blue', 'Red', 'Green', 'Other']
+      'answers': ['Blue', 'Red', 'Green', 'Other']
     },
     {
       'questionText': 'What\'s your favorite animal',
-      'answers': <String>['Dog', 'Cat', 'Mouse', 'Other']
+      'answers': ['Dog', 'Cat', 'Mouse', 'Other']
     },
     {
       'questionText': 'What\'s your favorite movie?',
-      'answers': <String>['Stolen', 'Con Air', 'The Rock', 'Other']
+      'answers': ['Stolen', 'Con Air', 'The Rock', 'Other']
     },
     {
       'questionText': 'What\'s your favorite food?',
-      'answers': <String>['Pasta', 'Rice and Beans', 'Meat', 'Other']
+      'answers': ['Pasta', 'Rice and Beans', 'Meat', 'Other']
     },
     {
       'questionText': 'What\'s your favorite subject?',
-      'answers': <String>['Math', 'English', 'Science', 'Other']
+      'answers': ['Math', 'English', 'Science', 'Other']
     },
   ];
 
+  var _questionIndex = 0;
+
   _answerQuestion() {
     setState(() {
-      if (_questionIndex + 1 < questions.length) {
+      if (_questionIndex + 1 > questions.length) {
         _questionIndex = _questionIndex + 1;
       }
     });
