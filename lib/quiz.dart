@@ -26,7 +26,6 @@ class Quiz extends StatelessWidget {
             ),
             ...questions[questionIndex]['answers'].map((answer) {
               return Answer(
-                buttonColor: Colors.blue,
                 onPressed: () => answerQuestion(answer['score']),
                 answerText: answer['text'],
               );

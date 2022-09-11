@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 
 class Answer extends StatelessWidget {
-  final Color buttonColor;
-  final VoidCallback onPressed;
   final String answerText;
+  final VoidCallback onPressed;
 
   const Answer({
     super.key,
-    required this.buttonColor,
     required this.onPressed,
     required this.answerText,
   });
@@ -19,7 +17,7 @@ class Answer extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(buttonColor),
+          backgroundColor: MaterialStateProperty.all(Colors.blue),
           minimumSize: MaterialStateProperty.all(
             const Size.fromHeight(50),
           ),

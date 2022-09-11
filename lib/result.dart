@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:quizapp/answer.dart';
-
 class Result extends StatelessWidget {
   final VoidCallback resetQuiz;
   final int resultScore;
@@ -31,15 +29,28 @@ class Result extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      Center(
-        child: Text(resultText),
+      Text(
+        resultText,
+        style: const TextStyle(
+          fontSize: 36,
+          fontWeight: FontWeight.bold,
+        ),
+        textAlign: TextAlign.center,
       ),
       const Spacer(),
-      Answer(
-        buttonColor: Colors.red,
-        onPressed: resetQuiz,
-        answerText: 'Reset Quiz',
-      ),
+      Container(
+        margin: const EdgeInsets.only(bottom: 10),
+        child: ElevatedButton(
+          onPressed: resetQuiz,
+          style: ButtonStyle(
+            backgroundColor: MaterialStateProperty.all(Colors.red),
+            minimumSize: MaterialStateProperty.all(
+              const Size.fromHeight(50),
+            ),
+          ),
+          child: const Text('Reset Quiz'),
+        ),
+      )
     ]);
   }
 }
