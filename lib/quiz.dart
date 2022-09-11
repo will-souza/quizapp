@@ -26,8 +26,8 @@ class Quiz extends StatelessWidget {
             ),
             ...questions[questionIndex]['answers'].map((answer) {
               return Answer(
-                onPressed: () => answerQuestion(answer['score']),
                 answerText: answer['text'],
+                onPressed: () => answerQuestion(answer['score']),
               );
             }).toList(),
           ],
