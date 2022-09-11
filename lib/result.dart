@@ -40,13 +40,12 @@ class Result extends StatelessWidget {
       const Spacer(),
       Container(
         margin: const EdgeInsets.only(bottom: 10),
-        child: ElevatedButton(
+        child: OutlinedButton(
           onPressed: resetQuiz,
-          style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all(Colors.red),
-            minimumSize: MaterialStateProperty.all(
-              const Size.fromHeight(50),
-            ),
+          style: OutlinedButton.styleFrom(
+            foregroundColor: Colors.red,
+            side: const BorderSide(color: Colors.red),
+            minimumSize: const Size.fromHeight(50),
           ),
           child: const Text('Reset Quiz'),
         ),

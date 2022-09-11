@@ -16,11 +16,9 @@ class Answer extends StatelessWidget {
       margin: const EdgeInsets.only(bottom: 10),
       child: ElevatedButton(
         onPressed: onPressed,
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(Colors.blue),
-          minimumSize: MaterialStateProperty.all(
-            const Size.fromHeight(50),
-          ),
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.blue,
+          minimumSize: const Size.fromHeight(50),
         ),
         child: Text(answerText),
       ),
