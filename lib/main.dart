@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import './question.dart';
-import './answer.dart';
+import 'package:quizapp/quiz.dart';
+import 'package:quizapp/result.dart';
 
 void main() => runApp(const MyApp());
 
@@ -15,7 +15,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  final questions = <Map>[
+  final _questions = <Map>[
     {
       'questionText': 'What\'s your favorite color?',
       'answers': ['Blue', 'Red', 'Green', 'Other']
@@ -40,15 +40,19 @@ class _MyAppState extends State<MyApp> {
 
   var _questionIndex = 0;
 
+  _hasQuestions() {
+    return _questionIndex < _questions.length;
+  }
+
   _answerQuestion() {
     setState(() {
-      if (_questionIndex + 1 < questions.length) {
+      if (_hasQuestions()) {
         _questionIndex = _questionIndex + 1;
       }
     });
   }
 
-  _resetQuestions() {
+  _resetQuiz() {
     setState(() {
       _questionIndex = 0;
     });
@@ -62,28 +66,16 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Quiz app'),
         ),
         body: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              Question(
-                questionText: questions[_questionIndex]['questionText'],
-              ),
-              ...questions[_questionIndex]['answers'].map((answer) {
-                return Answer(
-                  buttonColor: Colors.blue,
-                  onPressed: _answerQuestion,
-                  answerText: answer,
-                );
-              }).toList(),
-              const Spacer(),
-              Answer(
-                buttonColor: Colors.red,
-                onPressed: _resetQuestions,
-                answerText: 'Reset Quiz',
-              ),
-            ],
-          ),
-        ),
+            padding: const EdgeInsets.all(8.0),
+            child: _hasQuestions()
+                ? Quiz(
+                    questions: _questions,
+                    questionIndex: _questionIndex,
+                    answerQuestion: _answerQuestion,
+                  )
+                : Result(
+                    resetQuiz: _resetQuiz,
+                  )),
       ),
     );
   }
