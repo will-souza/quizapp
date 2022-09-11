@@ -42,7 +42,7 @@ class _MyAppState extends State<MyApp> {
 
   _answerQuestion() {
     setState(() {
-      if (_questionIndex + 1 > questions.length) {
+      if (_questionIndex + 1 < questions.length) {
         _questionIndex = _questionIndex + 1;
       }
     });
