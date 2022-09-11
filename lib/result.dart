@@ -6,12 +6,12 @@ import 'package:quizapp/answer.dart';
 
 class Result extends StatelessWidget {
   final VoidCallback resetQuiz;
-  final int totalScore;
+  final int resultScore;
 
   const Result({
     super.key,
     required this.resetQuiz,
-    required this.totalScore,
+    required this.resultScore,
   });
 
   @override

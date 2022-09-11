@@ -104,7 +104,7 @@ class _MyAppState extends State<MyApp> {
                   )
                 : Result(
                     resetQuiz: _resetQuiz,
-                    totalScore: _totalScore,
+                    resultScore: _totalScore,
                   )),
       ),
     );
